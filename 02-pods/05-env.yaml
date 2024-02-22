@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: GREETING
+      value: "Hello from environment"
+    - name: FAREWELL
+      value: "such a sweet sorrow"
+    ports:
+    - containerPort: 80
