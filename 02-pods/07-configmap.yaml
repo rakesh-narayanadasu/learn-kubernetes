@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: environment
+data:
+  key: value
+  username: admin
+  password: admin123
