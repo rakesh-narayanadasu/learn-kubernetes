@@ -12,9 +12,11 @@ spec:
     - name: username
       valueFrom:
         configMapKeyRef:
+          name: environment
           key: username
     - name: password
       valueFrom:
         configMapKeyRef:
+          name: environment
           key: password
       
