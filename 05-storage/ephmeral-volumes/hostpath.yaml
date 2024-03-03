@@ -56,7 +56,7 @@ spec:
           requests:
             cpu: 100m
             memory: 200Mi
-        volumesMounts:
+        volumeMounts:
         - name: varlog
           mountPath: /var/log
       volumes:
