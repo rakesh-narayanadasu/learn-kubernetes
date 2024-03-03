@@ -5,6 +5,7 @@ metadata:
   namespace: kube-system
   labels:
     demo: fluentd-logging
+    version: v1
 spec:
   selector:
     matchLabels:
@@ -13,6 +14,7 @@ spec:
     metadata:
       labels:
         demo: fluentd-logging
+        version: v1
     spec:
       containers:
       - name: fluentd
