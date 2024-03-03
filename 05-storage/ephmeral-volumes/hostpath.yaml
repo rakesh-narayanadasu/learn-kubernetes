@@ -61,5 +61,5 @@ spec:
           mountPath: /var/log
       volumes:
       - name: varlog
-        hostpath:
+        hostPath:
           path: /var/log
