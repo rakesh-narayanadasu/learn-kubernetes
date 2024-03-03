@@ -5,7 +5,7 @@ metadata:
   labels:
     demo: filebeat
 data:
-  filebeat.yaml: |
+  filebeat.yml: |
     filebeat:
       config:
         mondules:
@@ -57,8 +57,8 @@ spec:
         - name: nginx-logs
           mountPath: /var/log/nginx
         - name: filebeat-config
-          mountPath: /usr/share/filebeat/filebeat.yaml
-          subPath: filebeat.yaml
+          mountPath: /usr/share/filebeat/filebeat.yml
+          subPath: filebeat.yml
 
       volumes:
       - name: nginx-logs
@@ -67,5 +67,5 @@ spec:
         configMap:
           name: filebeat-config
           items:
-            - key: filebeat.yaml
-              path: filebeat.yaml
+            - key: filebeat.yml
+              path: filebeat.yml
