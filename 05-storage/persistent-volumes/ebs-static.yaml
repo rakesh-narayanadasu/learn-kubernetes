@@ -10,7 +10,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: # volume Id
+    volumeHandle: vol-010d87132kjfdh # ebs volume Id
 
 ---
 apiVersion: v1
@@ -42,7 +42,7 @@ spec:
     volumeMounts:
     - name: nginx-data
       mountPath: /usr/share/nginx/html
-  volume:
+  volumes:
   - name: nginx-data
     persistentVolumeClaim:
       claimName: ebs-static-pvc
