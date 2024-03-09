@@ -1,0 +1,25 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: admin-cluster-role
+  namespace: roboshop
+rules:
+- apiGroup: [""]
+  resources: ["secrets", "persistentVolumes"]
+  verbs: ["get", "watch", "list", "create"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterBinding
+metadata:
+  name: admin-cluster-role-rb
+  namespace: roboshop
+subjects:
+- kind: User
+  name: sam
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: admin-cluster-role
+  apiGroup: rbac.authorization.k8s.io
+  
