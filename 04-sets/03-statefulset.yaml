@@ -16,7 +16,7 @@ spec:
   serviceName: "nginx"
   selector:
     matchLabels:
-      apps: nginx
+      app: nginx
       demo: statefulset
   template:
     metadata:
