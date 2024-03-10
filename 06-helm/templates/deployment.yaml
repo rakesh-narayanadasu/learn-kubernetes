@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        apps: nginx
+        app: nginx
         demo: helm
     spec:
       containers:
