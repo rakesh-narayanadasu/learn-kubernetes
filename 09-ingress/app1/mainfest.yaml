@@ -21,7 +21,7 @@ spec:
       - name: app1
         image: rakeshn88/app1:v1
         imagePullPolicy: Always
-        resouces:
+        resources:
           requests:
             cpu: "50m"
             memory: "128Mi"
