@@ -19,10 +19,10 @@ metadata:
   name: nginx-clusterip
 spec:
   type: ClusterIP #It is a default service, no need to mention here
-  selector:
+  selector: # Service sends client request to this label pods
     app: nginx
     demo: service
   ports:
   - protocol: TCP
     port: 80  #Service port
-    targetPort: 80  #Container port
+    targetPort: 80  # Sends client request to this specific port incase of multiple container in a pod (container listening port 80 only)
