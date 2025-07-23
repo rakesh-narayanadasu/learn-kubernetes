@@ -147,7 +147,6 @@ Each scaling direction (scaleUp or scaleDown) can define:
 * Can scale up by:
   * Max 2 pods per minute OR
   * Max 100% increase per minute
-
 * ```selectPolicy: Max``` chooses the more aggressive option
 
 ```scaleDown```:
@@ -156,6 +155,7 @@ Each scaling direction (scaleUp or scaleDown) can define:
 * Prevents flapping or aggressive scale-ins
 
 **Default Behavior (If ```behavior``` is omitted)**
+
 If you don’t specify ```behavior```, Kubernetes uses conservative defaults:
 * No scaling faster than 4 pods per 60 seconds
 * ```scaleDown``` has a 5-minute stabilization window
