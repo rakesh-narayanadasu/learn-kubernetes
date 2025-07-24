@@ -92,3 +92,20 @@ In Kubernetes Vertical Pod Autoscaler (VPA), the terms ```lowerBound```, ```targ
 
 ```upperBound```:	Safe maximum recommendation
 
+**HPA vs VPA**
+
+**HPA**
+
+* Scales the number of pod replicas horizontally
+* For handling increased load by adding more pods
+* Supports CPU and memory metrics natively, custom metrics with Prometheus Adapter
+* May over-provision resources, increasing costs
+* Scaling **stateless** applications that handle varying traffic patterns
+
+**VPA**
+
+* Adjusts CPU and memory limits per pod vertically
+* For optimizing resource requests per pod to prevent over/underutilization
+* Supports CPU and memory metrics, does not support custom metrics
+* Can cause pod disruptions during recreation, may lead to pending pods if resource limits exceed availability
+* Scaling resource constrained **stateful** appplications for efficient resource usage
