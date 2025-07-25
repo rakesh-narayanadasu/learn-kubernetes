@@ -1,0 +1,19 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: low-priority
+value: 500
+globalDefault: false
+description: "This priority class is for less critical pods"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: non-preemtible-pod
+spec:
+  containers:
+  - name: non-preemtible-container
+    image: nginx
+    priorityClassName: low-priority   # Using a low priority class
+    preemptionPolicy: Never         # This pod cannot be preempted
