@@ -1,0 +1,38 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high-priority
+value: 1000
+globalDefault: false
+description: "This priority class is for critical pods"
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: high-priority-pod
+spec:
+  containers:
+  - name: high-priority-container
+    image: nginx
+    priorityClassName: high-priority
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: high-priority-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: high-priority-app
+  template:
+    metadata:
+      labels:
+        app: high-priority-app
+    spec:
+      containers:
+      - name: high-priority-container
+        image: nginx
+        priorityClassName: high-priority
